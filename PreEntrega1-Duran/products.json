@@ -1,0 +1,71 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Botella de agua CamelBak",
+      "description": "Botella de agua deportiva con boquilla",
+      "code": "CAMELBAK-BOT-01",
+      "price": 35000,
+      "status": true,
+      "stock": 4,
+      "category": "Accesorios",
+      "thumbnails": [
+        "img/botella_camelbak_1.jpg",
+        "img/botella_camelbak_2.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Carpa North Face X8",
+      "description": "Carpa impermeable para 8 personas",
+      "code": "CARPA-NF-x08",
+      "price": 2740000,
+      "status": true,
+      "stock": 2,
+      "category": "Camping",
+      "thumbnails": [
+        "img/carpa_NF_x8_1.jpg",
+        "img/carpa_NF_x8_2.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Zapatillas Adidas Running",
+      "description": "Zapatillas ligeras para correr",
+      "code": "ADIDAS-SHOE-01",
+      "price": 165000,
+      "status": true,
+      "stock": 5,
+      "category": "Deportes",
+      "thumbnails": [
+        "img/zapatilla_adidas_1.jpg",
+        "img/zapatilla_adidas_2.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Raqueta de tenis Wilson Pro",
+      "description": "Raqueta profesional de alta gama",
+      "code": "WILSON-RAC-01",
+      "price": 487000,
+      "status": true,
+      "stock": 3,
+      "category": "Deportes",
+      "thumbnails": [
+        "img/raqueta_wilson_1.jpg",
+        "img/raqueta_wilson_2.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Pelotas Tenis - Dunplop Tournament",
+      "description": "Pelotas de tenis profesionales",
+      "code": "DUNLOP-BALLS-02",
+      "price": 18000,
+      "status": true,
+      "stock": 6,
+      "category": "Deportes",
+      "thumbnails": "img/pelotas_dunlop_1.jpg"
+    }
+  ]
+}
