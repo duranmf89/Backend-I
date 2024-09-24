@@ -33,11 +33,12 @@ class CartManager {
 
     async addCart() {
         const carts = await this.getCarts();
-        const newCart = { id: carts.length + 1, products: [] };
+        const newCart = { id: carts.length > 0 ? Math.max(...carts.map(cart => cart.id)) + 1 : 1, products: [] };
         carts.push(newCart);
         await fs.writeFile(path, JSON.stringify(carts, null, 2));
         return newCart;
     }
+    
 
     async addProductToCart(cartId, productId, quantity) {
         const carts = await this.getCarts();
