@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 
-const path = './products.json';
+const path = './database/products.json';
 
 class ProductManager {
     constructor() {

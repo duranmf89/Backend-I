@@ -58,7 +58,7 @@
     },
     {
       "id": 7,
-      "title": "Pelotas Tenis - Dunplop Tournament",
+      "title": "Pelotas Tenis - Dunlop Tournament",
       "description": "Pelotas de tenis profesionales",
       "code": "DUNLOP-BALLS-02",
       "price": 18000,
@@ -66,6 +66,17 @@
       "stock": 6,
       "category": "Deportes",
       "thumbnails": "img/pelotas_dunlop_1.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Pelotas Paddle - Penn",
+      "description": "Pelotas de paddle prof.",
+      "code": "PENN-BALLS-01",
+      "price": 16000,
+      "status": true,
+      "stock": 3,
+      "category": "Deportes",
+      "thumbnails": "img/pelotas_penn_1.jpg"
     }
   ]
 }
