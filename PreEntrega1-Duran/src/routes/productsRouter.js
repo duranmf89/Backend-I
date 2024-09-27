@@ -20,7 +20,7 @@ router.get('/:pid', async (req, res) => {
     if (product) {
         res.json(product);
     } else {
-        // Si no se encuentra el producto, devolver un error 404 con un mensaje
+        
         res.status(404).json({ message: `Producto ${pid} no encontrado` });
         console.log(`Producto ${pid} no encontrado`)
     }
@@ -45,7 +45,7 @@ router.put('/:pid', async (req, res) => {
 
 // Eliminar un producto
 router.delete('/:pid', async (req, res) => {
-    const { pid } = req.params; // Extrae el pid desde los parámetros
+    const { pid } = req.params;
     console.log(`Ejecucion solicitud para eliminar producto: ${pid}`);
     const result = await productManager.deleteProduct(req.params.pid);
     res.json(result);

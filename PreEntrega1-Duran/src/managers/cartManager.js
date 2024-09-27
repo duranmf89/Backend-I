@@ -47,9 +47,9 @@ class CartManager {
         if (cart) {
             const productIndex = cart.products.findIndex(p => p.product === productId);
             if (productIndex > -1) {
-                cart.products[productIndex].quantity += quantity;  // Sumar la cantidad
+                cart.products[productIndex].quantity += quantity; 
             } else {
-                cart.products.push({ product: productId, quantity });  // Agregar nuevo producto con la cantidad
+                cart.products.push({ product: productId, quantity }); 
             }
             await fs.writeFile(path, JSON.stringify(carts, null, 2));
             return cart;

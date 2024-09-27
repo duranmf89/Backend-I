@@ -27,7 +27,7 @@ class ProductManager {
 
     async getProductById(id) {
         const products = await this.getProducts();
-        return products.find(product => product.id === Number(id)); // Asegúrate de comparar como número
+        return products.find(product => product.id === Number(id));
     }
 
     async addProduct(product) {
@@ -48,7 +48,7 @@ class ProductManager {
     async updateProduct(id, updatedProduct) {
         const data = JSON.parse(await fs.readFile(path, 'utf-8'));
         const { products } = data;
-        const index = products.findIndex(product => product.id === Number(id)); // Asegúrate de comparar como número
+        const index = products.findIndex(product => product.id === Number(id));
         if (index !== -1) {
             products[index] = { ...products[index], ...updatedProduct };
             await fs.writeFile(path, JSON.stringify({ products }, null, 2));
@@ -60,7 +60,7 @@ class ProductManager {
     async deleteProduct(id) {
         const data = JSON.parse(await fs.readFile(path, 'utf-8'));
         let { products } = data;
-        products = products.filter(product => product.id !== Number(id)); // Asegúrate de comparar como número
+        products = products.filter(product => product.id !== Number(id));
         await fs.writeFile(path, JSON.stringify({ products }, null, 2));
         return { message: 'Producto eliminado' };
     }
