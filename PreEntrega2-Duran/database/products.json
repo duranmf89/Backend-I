@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "title": "Carpa NorthFace X8",
+      "description": "Carpa premium de capacidad para 8 personas.",
+      "code": "CARP-NF-x8",
+      "price": 1232000,
+      "stock": 3,
+      "category": "Camping",
+      "status": true
+    },
+    {
+      "id": 5,
+      "title": "Zapatillas Tenis - Babolat",
+      "description": "Zapatillas profesionales de Tenis marca Babolat. Talles a consultar",
+      "code": "ZAP-Te-BB-341",
+      "price": 178000,
+      "stock": 4,
+      "category": "Deportes",
+      "status": true
+    },
+    {
+      "id": 9,
+      "title": "Botella termica Camelback",
+      "description": "Botella termica de aluminio marca CamelBack de 1 lts.",
+      "code": "BOT-CAM-1lts-tr321",
+      "price": 41000,
+      "stock": 4,
+      "category": "Camping",
+      "status": true
+    },
+    {
+      "id": 10,
+      "title": "Reposera plegable",
+      "description": "Reposera premium plegable para el rio o la playa.",
+      "code": "REP-PLE-pRe23",
+      "price": 124000,
+      "stock": 6,
+      "category": "Camping",
+      "status": true
+    },
+    {
+      "id": 11,
+      "title": "Paleta paddle PENN",
+      "description": "Paleta de paddle profesional marca Penn",
+      "code": "PAL-PE-re341",
+      "price": 241000,
+      "stock": 2,
+      "category": "Deportes",
+      "status": true
+    }
+  ]
+}

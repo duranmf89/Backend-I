@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="product-card">
+        <div class="product-header">
+            <h3>{{product.title}}</h3>
+            <span class="product-code">{{product.code}}</span>
+        </div>
+        <div class="product-info">
+            <p class="product-description">Descripción: {{product.description}}</p>
+            <span class="product-category">Categoría: {{product.category}}</span>
+            <span class="product-price">Precio: {{formatCurrency product.price}}</span>
+            <span class="product-stock">{{#if product.status}}En stock: {{product.stock}}{{else}}Sin stock{{/if}}</span>
+        </div>
+    </div>
+</div>

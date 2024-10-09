@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Lista de Productos</h1>
+    <div id="product-container">
+        {{#each products}}
+        <div class="product-card">
+            <div class="product-header">
+                <h3>{{title}}</h3>
+                <span class="product-code">{{code}}</span>
+            </div>
+            <div class="product-info">
+                <p class="product-description">Descripcion: {{description}}</p>
+                <span class="id">id: {{id}}</span>
+                <span class="product-category"> Categoria: {{category}}</span>
+                <span class="product-price">Precio: {{formatCurrency price}}</span>
+                <span class="product-stock">{{#if status}}En stock: {{stock}}{{else}}Sin stock{{/if}}</span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
