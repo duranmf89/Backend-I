@@ -7,6 +7,9 @@ export const validateProductData = (productData) => {
     if (productData.descripcion.length < 10) {
         errors.push('La descripción debe tener al menos 10 caracteres.');
     }
+    if (productData.descripcion.length > 75) {
+        errors.push('La descripción debe tener menos de 75 caracteres.');
+    }
     if (productData.codigo.length >= 40) {
         errors.push('El código debe contener máximo 40 caracteres.');
     }
