@@ -68,17 +68,18 @@
         // Evento de creación de producto
         socket.on('productCreated', (product) => {
             form.reset();
-            alert('Producto creado exitosamente');
-            addProductToDOM(product); 
-            
+            addProductToDOM(product);  
+            setTimeout(() => {
+                alert('Producto creado exitosamente');
+            }, 200); 
         });
 
         // Evento de eliminacion de producto
         socket.on('productDeleted', (productId) => {
             const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
             if (productCard) {
-                productCard.remove(); 
-                console.log(`Producto con ID ${productId} eliminado del DOM.`); 
+                productCard.remove();
+                console.log(`Producto con ID ${productId} eliminado del DOM.`);
             } else {
                 console.warn(`No se encontró un elemento con data-id="${productId}"`);
             }

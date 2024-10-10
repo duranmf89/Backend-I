@@ -11,32 +11,12 @@
       "status": true
     },
     {
-      "id": 5,
-      "title": "Zapatillas Tenis - Babolat",
-      "description": "Zapatillas profesionales de Tenis marca Babolat. Talles a consultar",
-      "code": "ZAP-Te-BB-341",
-      "price": 178000,
-      "stock": 4,
-      "category": "Deportes",
-      "status": true
-    },
-    {
       "id": 9,
       "title": "Botella termica Camelback",
       "description": "Botella termica de aluminio marca CamelBack de 1 lts.",
       "code": "BOT-CAM-1lts-tr321",
       "price": 41000,
       "stock": 4,
-      "category": "Camping",
-      "status": true
-    },
-    {
-      "id": 10,
-      "title": "Reposera plegable",
-      "description": "Reposera premium plegable para el rio o la playa.",
-      "code": "REP-PLE-pRe23",
-      "price": 124000,
-      "stock": 6,
       "category": "Camping",
       "status": true
     },
@@ -48,6 +28,26 @@
       "price": 241000,
       "stock": 2,
       "category": "Deportes",
+      "status": true
+    },
+    {
+      "id": 12,
+      "title": "Linterna ZT1000",
+      "description": "Linterna de alto poder con regulador de intensidad.",
+      "code": "LIN-ZT-fe341",
+      "price": 34000,
+      "stock": 6,
+      "category": "Camping",
+      "status": true
+    },
+    {
+      "id": 13,
+      "title": "Borcegos Caterpillar",
+      "description": "Borcegos de cuero marca Caterpillar con puntera de acero. Consultar talles.",
+      "code": "BOR-CAT-tt23",
+      "price": 280000,
+      "stock": 6,
+      "category": "Indumentaria",
       "status": true
     }
   ]
