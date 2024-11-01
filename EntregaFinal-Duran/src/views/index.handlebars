@@ -1,0 +1,42 @@
+{{!-- esta OK --}}
+
+<div class="container">
+    <h1>Lista de Productos</h1>
+    <!-- Search -->
+    <form id="searchForm" action="/views/products/search" method="GET" class="search-bar">
+        <input type="text" name="search" placeholder="Buscar productos por nombre..." required>
+        <button type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+    <div class="pagination">
+        {{#if hasPrevPage}}
+        <a href="{{prevLink}}" class="btn-pagination">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        {{/if}}
+        <span class="page-info">Página {{page}} de {{totalPages}}</span>
+        {{#if hasNextPage}}
+        <a href="{{nextLink}}" class="btn-pagination">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+        {{/if}}
+    </div>
+    <div id="product-container">
+        {{#each products}}
+        <div class="product-card" onclick="window.location.href='/views/products/{{this._id}}'">
+            <div class="product-header">
+                <h3>{{this.title}}</h3>
+                <span class="product-code">Código: {{this.code}}</span>
+            </div>
+            <div class="product-info">
+                <span class="product-category">Categoría: {{this.category}}</span>
+                <span class="product-price">Precio: {{formatCurrency this.price}}</span>
+            </div>
+            <button class="add-to-cart-button" onclick="agregarAlCarrito('{{this._id}}')">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+        {{/each}}
+    </div>
+</div>

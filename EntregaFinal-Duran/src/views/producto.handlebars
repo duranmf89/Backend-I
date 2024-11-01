@@ -1,0 +1,26 @@
+{{!-- esta OK --}}
+
+<div class="container">
+    <h1>Detalle de Producto</h1>
+    <a href="/" class="home">Volver al inicio</a>
+    <div class="product-card">
+        <div class="product-header">
+            <h3>{{product.title}}</h3>
+            <span class="product-code">Código: {{product.code}}</span>
+        </div>
+        <div class="product-info">
+            <p class="product-description">Descripción: {{product.description}}</p>
+            <span class="product-category">Categoría: {{product.category}}</span>
+            <span class="product-price">Precio: {{formatCurrency product.price}}</span>
+            <span class="product-stock">
+                {{#if product.status}}En stock: {{product.stock}}{{else}}Sin stock{{/if}}
+            </span>
+        </div>
+        <button class="edit-product-button" onclick="window.location.href='/views/products/{{product._id}}/edit'">
+            <i class="fas fa-edit"></i>
+        </button>
+        <button class="add-to-cart-button" onclick="agregarAlCarrito('{{product._id}}')">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </div>
+</div>

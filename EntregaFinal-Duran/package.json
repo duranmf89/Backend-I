@@ -1,0 +1,22 @@
+{
+  "name": "preentrega1-duran",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "express": "^4.21.0",
+    "express-handlebars": "^8.0.1",
+    "fuse.js": "^7.0.0",
+    "mongoose": "^8.7.3",
+    "mongoose-paginate-v2": "^1.8.5",
+    "socket.io": "^4.8.0"
+  }
+}

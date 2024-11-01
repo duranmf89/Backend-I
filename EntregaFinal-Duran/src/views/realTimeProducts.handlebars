@@ -1,0 +1,105 @@
+{{!-- esta OK  --}}
+
+<h1 class="form-header">Registro de productos</h1>
+<form class="product-form" action="/api/views" id="productForm" method="POST">
+    <input class="form-input" type="text" id="title" name="titulo" placeholder="Título" required>
+    <textarea class="form-textarea" id="description" name="descripcion" placeholder="Descripción" rows="4"
+        required></textarea>
+    <input class="form-input" type="text" id="code" name="codigo" placeholder="Código" required>
+    <input class="form-input" type="number" id="price" name="precio" placeholder="Precio" required>
+    <input class="form-input" type="number" id="stock" name="stock" placeholder="Stock" required>
+    <input class="form-input" type="text" id="category" name="categoria" placeholder="Categoría" required>
+    <button class="form-button" type="submit">Enviar</button>
+</form>
+<br />
+<br />
+<br />
+<div class="container">
+    <h1>Lista de Productos recientemente agregados: </h1>
+    <div id="product-container">
+        <!-- Aca se inserta el producto con la funcion addProductToDom a traves del id del div, (productContainer.appendChild(newProductCard)) -->
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const socket = io();
+        const form = document.querySelector('#productForm');
+        const productContainer = document.querySelector('#product-container');
+
+        // agrega un producto al DOM 
+        const addProductToDOM = (product) => {
+            const newProductCard = document.createElement('div');
+            newProductCard.classList.add('product-card');
+            newProductCard.setAttribute('data-id', product._id);
+            newProductCard.innerHTML = `
+            <div class="product-header">
+                <h3>${product.title}</h3>
+                <span class="product-code">${product.code}</span>
+            </div>
+            <div class="product-info">
+                <p class="product-description">Descripcion: ${product.description}</p>
+                <span class="product-category">Categoria: ${product.category}</span>
+                <span class="product-price">Precio: ${new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 }).format(product.price)}</span>
+                <span class="product-stock">${product.status ? 'En stock: ' + product.stock : 'Sin stock'}</span>
+            </div>
+            <button class="delete-button" data-id="${product._id}">
+                 <i class="fas fa-trash"></i> <!-- Icono de basura -->
+            </button>
+        `;
+
+            // Agregar evento al boton de eliminar
+            newProductCard.querySelector('.delete-button').addEventListener('click', (event) => {
+                const productId = event.currentTarget.getAttribute('data-id');
+                console.log(`Emitiendo deleteProduct para el ID: ${productId}`);
+                socket.emit('deleteProduct', productId);
+            });
+
+            productContainer.appendChild(newProductCard);
+        };
+
+
+        // Creacion del producto
+        socket.on('productCreated', (product) => {
+            form.reset();
+            addProductToDOM(product);  
+            setTimeout(() => {
+                alert('Producto creado exitosamente');
+            }, 200); 
+        });
+
+        // Eliminacion de producto
+        socket.on('removeDeleted', (productId) => {
+            const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
+            if (productCard) {
+                productCard.remove();
+                console.log(`Producto con ID ${productId} eliminado del DOM.`);
+            } else {
+                console.warn(`No se encontró un elemento con data-id="${productId}"`);
+            }
+        });
+
+        // Alert que escucha al validador que esta en el middleware (lo envia el socket.js)
+        socket.on('validationErrors', (data) => {
+            alert('Errores de validación:\n' + data.errors.join('\n'));
+        });
+
+        // Envio del formularioi
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // usamos el atributo name (que esta en castellano) para enviar el formData.
+            const formData = new FormData(form);
+            const productData = {
+                titulo: formData.get('titulo'),
+                descripcion: formData.get('descripcion'),
+                codigo: formData.get('codigo'),
+                precio: formData.get('precio'),
+                stock: formData.get('stock'),
+                categoria: formData.get('categoria')
+            };
+
+            socket.emit('createProduct', productData);
+        });
+    });
+</script>

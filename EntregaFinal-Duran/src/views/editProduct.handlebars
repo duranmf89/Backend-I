@@ -1,0 +1,53 @@
+{{!-- Esta OK --}}
+
+<h1 class="form-header">Edición de producto</h1>
+<a href="/" class="home" style="display: block; text-align: center; margin-bottom: 20px;">Volver al inicio</a>
+<form class="product-form" id="productForm" method="POST">
+    <input class="form-input" type="text" id="title" name="titulo" value="{{product.title}}" placeholder="Título" required>
+    <textarea class="form-textarea" id="description" name="descripcion" placeholder="Descripción" rows="4" required>{{product.description}}</textarea>
+    <input class="form-input" type="text" id="code" name="codigo" value="{{product.code}}" placeholder="Código" required>
+    <input class="form-input" type="number" id="price" name="precio" value="{{product.price}}" placeholder="Precio" required>
+    <input class="form-input" type="number" id="stock" name="stock" value="{{product.stock}}" placeholder="Stock" required>
+    <input class="form-input" type="text" id="category" name="categoria" value="{{product.category}}" placeholder="Categoría" required>
+    <button class="form-button" type="submit">Confirmar edición</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const socket = io();
+        const form = document.getElementById('productForm');
+
+        
+        socket.on('validationErrors', (data) => {
+            alert('Errores de validación:\n' + data.errors.join('\n'));
+        });
+
+       
+        socket.on('updateSuccess', (productId) => {
+            alert('Producto actualizado exitosamente');
+            window.location.href = `/views/products/${productId}`;
+        });
+
+        
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            
+            const formData = new FormData(form);
+            const updatedData = {
+                titulo: formData.get('titulo'),
+                descripcion: formData.get('descripcion'),
+                codigo: formData.get('codigo'),
+                precio: formData.get('precio'),
+                stock: formData.get('stock'),
+                categoria: formData.get('categoria')
+            };
+
+            socket.emit('updateProduct', { productId: "{{product._id}}", updatedData });
+        });
+    });
+</script>
+
+
+

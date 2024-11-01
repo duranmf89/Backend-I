@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+    font-family: 'Lato', sans-serif; 
+}
+
+/* Estilo general del contenedor */
+#product-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+}
+
+/* Estilo de la tarjeta del producto */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.2s;
+    width: 300px; 
+    height: auto; 
+    position: relative;
+}
+
+/* Efecto hover para la tarjeta */
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo del encabezado del producto */
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: auto; 
+}
+
+
+/* Ajustar tamaño del título */
+.product-header h3 {
+    font-size: 1.25rem; 
+    margin: 0;
+}
+
+/* Ajustar tamaño del código del producto */
+.product-code {
+    background: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem; 
+    margin-left: 20px;
+}
+
+
+/* Descripción del producto */
+.product-description {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Información del producto */
+.product-info {
+    display: flex;
+    flex-direction: column; 
+    margin-top: auto; 
+}
+
+/* Estilo del precio */
+.product-price {
+    color: #28a745; 
+    font-weight: bold;
+    margin: 5px 0; 
+}
+
+/* Estilo del stock */
+.product-stock {
+    color: #dc3545; 
+    margin: 5px 0; 
+}
+
+/* Estilo de la categoría */
+.product-category {
+    margin: 5px 0; 
+}
+
+/* Estilo del ID*/
+.id {
+    color: #666;
+    margin: 5px 0; 
+}
+
+/* Estilo para el enlace "Volver al inicio" */
+.home {
+    display: inline-block;
+    margin-bottom: 20px;  /* Añade espacio debajo del enlace */
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.home:hover {
+    color: #0056b3;  /* Color en hover */
+}
+
+.edit-product-button {
+    background-color: transparent;
+    border: none;
+    color: #007bff;  /* Azul para indicar "editar" */
+    cursor: pointer;
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 15px;
+    right: 55px;  /* Mueve el botón de edición a la izquierda del botón de carrito */
+    transition: color 0.3s, transform 0.2s;
+}
+
+.edit-product-button:hover {
+    color: #0056b3;  /* Azul más oscuro en hover */
+    transform: scale(1.1);
+}
+
+
+.add-to-cart-button {
+    background-color: transparent;
+    border: none;
+    color: #28a745;  /* Verde para indicar "agregar" */
+    cursor: pointer;
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.add-to-cart-button:hover {
+    color: #218838;  
+    transform: scale(1.1);
+}
+
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    color: red; 
+    cursor: pointer;
+    font-size: 1.4rem; 
+    position: absolute;
+    bottom: 15px; 
+    right: 15px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.delete-button:hover {
+    color: darkred;
+    transform: scale(1.1); 
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-pagination {
+    background-color: transparent; /* Fondo transparente */
+    color: #555; /* Color gris oscuro para el ícono */
+    padding: 5px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Botones cuadrados con bordes sutilmente redondeados */
+    text-decoration: none;
+    font-size: 1rem; /* Tamaño del ícono */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Tamaño más pequeño */
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-pagination:hover {
+    background-color: #f0f0f0; /* Fondo gris claro al hacer hover */
+    color: #333; /* Color gris más oscuro en hover */
+}
+
+.page-info {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.search-bar button {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+.search-bar button i {
+    font-size: 18px;
+}
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+/* Estilos para el formulario */
+.form-header {
+    text-align: center;
+    color: #333;
+    font-family: 'Lato', sans-serif; 
+}
+
+.product-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 20px auto; 
+    font-family: 'Lato', sans-serif; 
+    box-sizing: border-box; 
+}
+
+.form-input, .form-textarea, .form-button {
+    width: calc(100% - 40px); 
+    padding: 10px;
+    margin: 10px 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-button {
+    width: calc(50% - 20px);
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto; 
+}
+
+.form-button:hover {
+    background-color: #45a049;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .product-form {
+        width: 75%;
+        padding: 15px;
+    }
+
+    .form-input, .form-textarea {
+        width: calc(100% - 40px); 
+    }
+
+    .form-button {
+        width: calc(50% - 40px); 
+    }
+}
