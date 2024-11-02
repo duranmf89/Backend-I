@@ -1,5 +1,8 @@
 Comentarios Entrega Final:
 
+Postman de carritos: En la carpeta de Entrega final tambien hay un json con la coleccion de postman, hay que 
+usar la carpeta "Entrega Final - Carritos".
+
 Compass:
 Connection String: mongodb+srv://franciscoSCluster:Abc12345@franciscos-cluster-oct2.7gnai.mongodb.net/
 
@@ -33,4 +36,6 @@ importamos el modelo de productos tambien para poder gestionar estos productos e
 Logre hacer edicion de productos cuando entras desde el producto.handlebars (router.get('/products/:pid', getProductById);
 en el icono de edicion, donde aparece el formulario en editProduct.handlebars (con validaciones, usan el mismo validador que el 
 registro de productos) (router.get('/products/:pid/edit', editProduct);)
+Se puede verificar que si se crea un producto aparece en la base de datos de mongo, si lo desea eliminar debe hacerse en el mismo
+momento y tambien usa mongoose para eliminarlo (por socket.js).
 
