@@ -80,7 +80,7 @@ export const getProducts = async (req, res) => {
 
 //------------------------------------------------------
 
-// CONTROLADOR para obtener un producto por su ID y mostrar los detalles
+// CONTROLADOR para obtener un producto por su ID y mostrar los detalles (front)
 export const getProductById = async (req, res) => {
     const { pid } = req.params;
 

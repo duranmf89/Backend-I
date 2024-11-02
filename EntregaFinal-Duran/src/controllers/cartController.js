@@ -17,7 +17,7 @@ export const createCart = async (req, res) => {
 };
 
 // Agregar un producto al carrito
-// Metodo POST
+// Metodo POST (se agrega un producto al carrito desde postman especificando el id del producto que tenemos en mongoDB atlas/compass)
 //http://localhost:8080/carts/"_id_cart"/products
 // body: { "productId": "_id_producto", "quantity": 1 }
 export const addProductToCart = async (req, res) => {
@@ -61,8 +61,8 @@ export const addProductToCart = async (req, res) => {
 
 
 // Obtener un carrito con productos completos (populate)
-// Metodo GET
-//http://localhost:8080/carts/"_id_cart"
+// Metodo GET (URL)
+// http://localhost:8080/carts/"_id_cart"
 // Obtener un carrito con productos completos (populate) y renderizar en la vista carrito.handlebars
 export const getCartById = async (req, res) => {
     const { cid } = req.params;
@@ -84,7 +84,7 @@ export const getCartById = async (req, res) => {
 
 
 // Eliminar un producto del carrito
-// Metodo DELETE
+// Metodo DELETE (Postman)
 // http://localhost:8080/carts/"cart_id"/products/"product_id"
 export const deleteProductFromCart = async (req, res) => {
     const { cid, pid } = req.params;
@@ -173,7 +173,7 @@ export const updateProductQuantity = async (req, res) => {
         cart.products[productIndex].quantity = quantity;
 
         await cart.save();
-        res.status(200).json({ message: 'Cantidad de producto actualizada', cart });
+        res.status(200).json({ message: `Cantidad de producto ID: ${ pid } actualizada`, cart });
     } catch (error) {
         res.status(500).json({ message: 'Error al actualizar la cantidad del producto', error });
     }
