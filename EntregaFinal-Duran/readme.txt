@@ -1,5 +1,9 @@
 Comentarios Entrega Final:
 
+Ejecucion: 
+/EntregaFinal-Duran
+node src/app.js
+
 Postman de carritos: En la carpeta de Entrega final tambien hay un json con la coleccion de postman, hay que 
 usar la carpeta "Entrega Final - Carritos".
 
