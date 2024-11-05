@@ -16,9 +16,9 @@ Proyect name: PRU-OCT-24
 
 Indexes: 
 - Category (Creado en Atlas para buscar a traves de la Url con query)
-- Code (creado a traves del atributo unique (code: { type: String, required: true, unique: true }, )
+- Code (creado a traves del atributo unique (code: { type: String, required: true, unique: true }, ) desde el modelo.
 - Id (creado por mongo)
-- Search Index para title (creado en Atlas para hacer fuzzy search desde el front end en la barra de busqueda)
+- Search Index para title (creado en Atlas para hacer fuzzy search desde el front end en la barra de busqueda)(extra)
 
 Routes:
 Productos : en el js de las rutas de producto esta comentado lo que hace cada ruta.
