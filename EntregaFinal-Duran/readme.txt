@@ -4,8 +4,7 @@ Ejecucion:
 /EntregaFinal-Duran
 node src/app.js
 
-Postman de carritos: En la carpeta de Entrega final tambien hay un json con la coleccion de postman, hay que 
-usar la carpeta "Entrega Final - Carritos".
+Postman de carritos: json con la coleccion de postman, hay que usar la coleccion "Entrega Final - Carritos".
 
 Compass:
 Connection String: mongodb+srv://franciscoSCluster:Abc12345@franciscos-cluster-oct2.7gnai.mongodb.net/
